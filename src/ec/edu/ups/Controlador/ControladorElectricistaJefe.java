@@ -23,22 +23,47 @@ public class ControladorElectricistaJefe {
     }
      public void create  (ElectricistaJefe objeto)
     {
-        
+        codigo++;
+        objeto.setCodigo(codigo);
+        lista.add(objeto);
     }
     public ElectricistaJefe read(int codigo)
     {
-        
+        for(ElectricistaJefe ElectricistaEmpleado : lista)
+        {
+            if(ElectricistaEmpleado.getCodigo()==codigo)
+            {
+                return ElectricistaEmpleado;
+            }
+        }
+        return null;
     }
     public void update(ElectricistaJefe objeto)
     {
-        
+        for (ElectricistaJefe electricistaJefe: lista)
+        {
+            if(electricistaJefe.equals(objeto))
+            {
+               lista.remove(electricistaJefe);
+               lista.add(objeto);
+               break;
+            } 
+            
+        }
     }
     public void delete(int codigo)
     {
-        
+        for(ElectricistaJefe electricistaJefe: lista)
+        {
+            System.out.println(electricistaJefe);
+                   
+        }
     }
     public void litar()
     {
-        
+      for(ElectricistaJefe electricistaJefe : lista)
+      {
+          System.out.println(electricistaJefe);
+      }  
     }
 }
